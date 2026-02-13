@@ -1,6 +1,5 @@
 
 import orjson
-import sys
 
 def load_input_file_json(path: str) -> list[dict]:
     try:
