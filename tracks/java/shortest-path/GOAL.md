@@ -9,7 +9,6 @@ A java program that..
 - [X] Reads a set of graph edges from a specified input file
 - [X] Prompt the user for a source and destination node
 - [ ] Returns the shortest length from the source to the destination nodes (Diskstra's)
-- [ ] Pipes the full dialogue output to an output file
 - [ ] Uses java modularity and clean-code conventions
 
 ### Skills practiced
@@ -21,4 +20,4 @@ A java program that..
 
 ## Artifacts produced
 
-- [ ] Session output.txt
+- [ ] Successfully running program artifact persisted manually in the project
