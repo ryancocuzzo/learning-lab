@@ -1,0 +1,29 @@
+// All lines beginning with a "//" will be ignored
+//
+// Here is an ASCII diagram for the graph mentioned below
+//
+// A --2--> C --3--> B --5--> D --2--> F --3--> G
+// |         |         |
+// 4         6         1
+// v         v         v
+// H --7-->  E --2-->  D
+// |         |
+// 5         8
+// v         v
+// G         G
+//
+// H --9--> A
+
+A C 2
+A H 4
+C B 3
+C H 6
+B D 5
+B E 1
+E D 2
+D F 2
+F G 3
+E G 8
+H E 7
+H G 5
+H A 9

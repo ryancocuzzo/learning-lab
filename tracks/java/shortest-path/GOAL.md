@@ -6,8 +6,8 @@ The goal here is re-familiarizing with the Java language. i haven't written a li
 
 A java program that..
 
-- [ ] Reads a set of graph edges from a specified input file
-- [ ] Prompt the user for a source and destination node
+- [X] Reads a set of graph edges from a specified input file
+- [X] Prompt the user for a source and destination node
 - [ ] Returns the shortest length from the source to the destination nodes (Diskstra's)
 - [ ] Pipes the full dialogue output to an output file
 - [ ] Uses java modularity and clean-code conventions
@@ -21,4 +21,4 @@ A java program that..
 
 ## Artifacts produced
 
-- Session output.txt
+- [ ] Session output.txt
