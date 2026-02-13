@@ -1,0 +1,3 @@
+{
+    "python.defaultInterpreterPath": "tracks/python/log-etl/.venv/bin/python",
+}

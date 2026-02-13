@@ -1,0 +1,9 @@
+[project]
+name = "log-etl"
+version = "0.1.0"
+description = "Log ETL processor"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "orjson>=3.11.7",
+]
