@@ -7,7 +7,9 @@ The goal here is re-familiarizing with the Python language. I haven't written a 
 A python program that..
 
 - [X] Accepts a log file path and an output file path via system input
-- [X] Ingests log data
+- [ ] Ingests log data
+    - [X] Parses each entry row into a dictionary
+    - [ ] Uses an intelligent, scalable parsing and processing mechanism for the data rows
 - [ ] Computes aggregates
     - [ ] Total revenue
     - [ ] Average order value
