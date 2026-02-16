@@ -36,11 +36,11 @@ public class InputFileParser {
                 Edge e = parseLineAsEdge(line);
                 if (e != null) {
                     edges.add(e);
+                    if (!nodeNames.contains(e.from.name))
+                        nodeNames.add(e.from.name);
+                    if (!nodeNames.contains(e.to.name))
+                        nodeNames.add(e.to.name);
                 }
-                if (!nodeNames.contains(e.from.name))
-                    nodeNames.add(e.from.name);
-                if (!nodeNames.contains(e.to.name))
-                    nodeNames.add(e.to.name);
             });
         } catch (IOException e) {
             System.out.printf("Could not bind the path %s to lines\n", filepath);

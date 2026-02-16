@@ -2,6 +2,7 @@ package algo;
 
 import java.util.HashMap;
 import java.util.PriorityQueue;
+import java.util.Set;
 import java.util.Map;
 
 import graph.Graph;
@@ -31,13 +32,15 @@ public class ShortestPathFinder {
         while (!pq.isEmpty()) {
             PriorityRecord pr = pq.remove();
             String source = pr.nodeName;
-            for (Edge dest : graph.edgesFrom(source)) {
+            Set<Edge> destinations = graph.edgesFrom(source);
+            if (destinations == null) continue;
+            for (Edge dest : destinations) {
                 int currentBestDistance = distances.get(dest.to.name);
                 int newDistance = distances.get(source) + dest.weight;
                 if (newDistance < currentBestDistance) {
                     distances.put(dest.to.name, distances.get(source) + dest.weight);
+                    pq.add(new PriorityRecord(dest.to.name, newDistance));
                 }
-                pq.add(new PriorityRecord(dest.to.name, newDistance));
             }
         }
         return distances.get(toNode);
