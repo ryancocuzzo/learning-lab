@@ -1,50 +1,44 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
 from typing import Annotated, Optional
 from enum import Enum
+
+from order import Order
+from order_service import OrderService
 
 class Severity(Enum):
     INFO = "INFO"
     WARN = "WARN"
 
 class Environment(Enum):
-    DEV = "dev"
     PROD = "prod"
+    DEV = "dev"
 
-
-class Log(BaseModel):
-    # Universal logs
-    timestamp: datetime
-    severity: Annotated[Severity, Field(alias='sev')]
+class LogEnvelope(BaseModel):
+    model_config = ConfigDict(extra="allow", populate_by_name=True)
+    timestamp: Annotated[datetime, Field(alias='ts')]
+    severity: Severity
     service_name: Annotated[str, Field(alias="service.name")]
     environment: Annotated[Environment, Field(alias="env")]
     event_dataset: Annotated[str, Field(alias="event.dataset")]
     event_action: Annotated[str, Field(alias="event.action")]
-    
 
-# All of this system's logs have at least this info.
-class HalalCartLog(Log):
-    event_id: Annotated[str, Field(alias="event.id")]
-    cart_id: Annotated[str, Field(alias="cart.id")]
-    location_id: Annotated[str, Field(alias="location.id")]
-    message: Annotated[str, Field(alias="msg")]
+class LogProcessor:
 
-# Some logs in this system have more info. These types of
-# logs are outlined below
+    os: OrderService
 
-class HalalOperatorLog(HalalCartLog):
-    operator_id: Annotated[str, Field(alias="op.id")]
+    def __init__(self, os: OrderService):
+        self.os = os
 
+    def _route_log(self, raw: dict):
+        """Routing by event type"""
+        envelope = LogEnvelope.model_validate(raw)
+        match (envelope.event_dataset, envelope.event_action):
+            # Sale completed log
+            case ("pos.sales", "sale_completed"):
+                order = Order.model_validate(raw)
+                self.os.process_sale(order)
 
-class HalalPropaneLog(HalalCartLog):
-    propane_tank_id: Annotated[str, Field(alias="propane.tank_id")]
-    propane_level_pct: Annotated[int, Field(alias="propane.level_pct")]
-
-
-class HalalGriddleLog(HalalCartLog):
-    target_temp_f: Annotated[int, Field(alias="griddle.target_f")]
-
-
-# TODO: These pydantic models will be replaced with a more pragmatic approach
-# of separating log info into "envelopes" and "payloads", which
-# are routed to "processors". More to come.
+    def process_log(self, raw: dict):
+        """Process a log"""
+        self._route_log(raw)

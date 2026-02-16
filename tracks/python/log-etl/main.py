@@ -1,6 +1,9 @@
 
 import orjson
 
+from order_service import OrderService
+from log import LogProcessor
+
 def load_input_file_json(path: str) -> list[dict]:
     try:
         with open(path, "r") as f:
@@ -27,7 +30,10 @@ def main():
 
         data = load_input_file_json(input_file)
 
-        print(data)
+        os = OrderService()
+        lp = LogProcessor(os)
+        for raw_log in data:
+            lp.process_log(raw_log)
 
     except KeyboardInterrupt:
         print("\nUser signaled to exit application.")
