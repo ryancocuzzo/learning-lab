@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Graph {
+    // Choosing a string id because the full node structure isn't relevant. We're not dealing with nodes themselves.
+    // Choosing a Set for the edge list because ordering doesn't matter and there should be no duplicates
     Map<String, Set<Edge>> adjacencyList; // map node IDs to the IDs of nodes to their edges
 
     public Graph(Set<Edge> edges) {
