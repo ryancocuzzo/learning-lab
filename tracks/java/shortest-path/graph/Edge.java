@@ -1,3 +1,4 @@
+package graph;
 public class Edge {
     public int weight;
     public Node from;

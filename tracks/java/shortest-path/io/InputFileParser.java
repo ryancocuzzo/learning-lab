@@ -1,8 +1,13 @@
+package io;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
+
+import graph.Edge;
+import graph.Graph;
+import graph.Node;
 
 public class InputFileParser {
      private static Edge parseLineAsEdge(String line) {
