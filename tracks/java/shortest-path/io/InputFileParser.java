@@ -19,7 +19,12 @@ public class InputFileParser {
         }
         String fromString = split[0];
         String toString = split[1];
-        int weight = Integer.valueOf(split[2]);
+        int weight;
+        try {
+            weight = Integer.parseInt(split[2]);
+        } catch (NumberFormatException e) {
+            return null;
+        }
         // we are assuming non-negative edge weights
         if (weight < 0) {
             return null;
@@ -43,9 +48,8 @@ public class InputFileParser {
                 }
             });
         } catch (IOException e) {
-            System.out.printf("Could not bind the path %s to lines\n", filepath);
-            throw new Error("Could not parse file.");
-        };
+            throw new RuntimeException("Could not parse file: " + filepath, e);
+        }
         return new Graph(edges, nodeNames);
     }
 }

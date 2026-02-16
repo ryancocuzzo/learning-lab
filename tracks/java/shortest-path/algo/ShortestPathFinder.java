@@ -32,6 +32,7 @@ public class ShortestPathFinder {
         while (!pq.isEmpty()) {
             PriorityRecord pr = pq.remove();
             String source = pr.nodeName;
+            if (pr.dist > distances.get(source)) continue;
             Set<Edge> destinations = graph.edgesFrom(source);
             if (destinations == null) continue;
             for (Edge dest : destinations) {
@@ -43,6 +44,7 @@ public class ShortestPathFinder {
                 }
             }
         }
-        return distances.get(toNode);
+        Integer result = distances.get(toNode);
+        return result != null ? result : -1;
     }
 }

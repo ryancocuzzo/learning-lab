@@ -1,0 +1,18 @@
+java Main      
+Enter the input file path: edges.txt
+Graph:
+A => C (2), H (4)
+B => D (5), E (1)
+C => B (3), H (6)
+D => F (2)
+E => D (2), G (8)
+F => G (3)
+H => G (5), A (9), E (7)
+
+
+We're going to be calculating shortest-path.
+Please provide the name of the source and destination nodes.
+Enter the name of the source node: A
+Enter the name of the destination node: D
+
+The shortest path between A and D is 8 units!%   

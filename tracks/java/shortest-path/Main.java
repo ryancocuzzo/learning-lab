@@ -6,14 +6,12 @@ import io.InputFileParser;
 
 public class Main {
 
-    public static void main() {
+    public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter the input file path: ");
             String inputFile = sc.nextLine();
             Graph g = InputFileParser.parseFileAsGraph(inputFile);
-            if (g != null) {
-                System.out.println(g.toString());
-            }
+            System.out.println(g.toString());
 
             System.out.println("\nWe're going to be calculating shortest-path.");
             System.out.println("Please provide the name of the source and destination nodes.");

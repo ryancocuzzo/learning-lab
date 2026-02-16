@@ -8,11 +8,11 @@ public class Graph {
     // Choosing a string id because the full node structure isn't relevant. We're not dealing with nodes themselves.
     // Choosing a Set for the edge list because ordering doesn't matter and there should be no duplicates
     Map<String, Set<Edge>> adjacencyList; // map node IDs to the IDs of nodes to their edges
-    Set<String> nodesNames;
+    Set<String> nodeNames;
 
     public Graph(Set<Edge> edges, Set<String> nodeNames) {
         this.adjacencyList = this.computeAdjacencyList(edges);
-        this.nodesNames = nodeNames;
+        this.nodeNames = nodeNames;
     }
 
     private Map<String, Set<Edge>> computeAdjacencyList(Set<Edge> edges) {
@@ -23,16 +23,14 @@ public class Graph {
                 Set<Edge> newSet = new HashSet<Edge>();
                 adjacencyList.put(key, newSet);
             }
-            Set<Edge> destinationEdges = adjacencyList.get(key);
-            destinationEdges.add(e);
-            adjacencyList.put(key, destinationEdges);
+            adjacencyList.get(key).add(e);
         }
         return adjacencyList;
     }
 
     // Convenience function for algorithms which use the node names
     public Set<String> getNodeNames() {
-        return nodesNames;
+        return nodeNames;
     }
 
     public Set<Edge> edgesFrom(String nodeName) {

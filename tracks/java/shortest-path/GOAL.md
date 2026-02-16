@@ -8,8 +8,12 @@ A java program that..
 
 - [X] Reads a set of graph edges from a specified input file
 - [X] Prompt the user for a source and destination node
-- [ ] Returns the shortest length from the source to the destination nodes (Diskstra's)
-- [ ] Uses java modularity and clean-code conventions
+- [X] Returns the shortest length from the source to the destination nodes (Diskstra's)
+- [X] Uses java modularity and clean-code conventions
+
+## AI Refinement
+
+- [X] Asked AI for a final look, and allowed it to make corrections.
 
 ### Skills practiced
 
@@ -20,4 +24,4 @@ A java program that..
 
 ## Artifacts produced
 
-- [ ] Successfully running program artifact persisted manually in the project
+- [X] Successfully running program artifact persisted manually in the project => `session.txt`

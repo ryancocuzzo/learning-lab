@@ -1,6 +1,6 @@
 package algo;
 
-public class PriorityRecord implements Comparable<Object> {
+public class PriorityRecord implements Comparable<PriorityRecord> {
     String nodeName;
     int dist;
 
@@ -10,8 +10,7 @@ public class PriorityRecord implements Comparable<Object> {
     }
 
     @Override
-    public int compareTo(Object o) {
-        PriorityRecord pr = (PriorityRecord) o;
+    public int compareTo(PriorityRecord pr) {
         if (this.dist > pr.dist)
             return 1;
         if (this.dist == pr.dist)
