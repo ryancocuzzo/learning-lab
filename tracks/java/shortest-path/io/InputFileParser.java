@@ -20,6 +20,10 @@ public class InputFileParser {
         String fromString = split[0];
         String toString = split[1];
         int weight = Integer.valueOf(split[2]);
+        // we are assuming non-negative edge weights
+        if (weight < 0) {
+            return null;
+        } 
         return new Edge(new Node(fromString), new Node(toString), weight);
     }
 
