@@ -1,6 +1,6 @@
 package graph;
 public class Node {
-    String name;
+    public String name;
 
     public Node(String name) {
         this.name = name;

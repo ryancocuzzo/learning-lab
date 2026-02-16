@@ -30,17 +30,22 @@ public class InputFileParser {
     public static Graph parseFileAsGraph(String filepath) {
         Path path = Path.of(filepath);
         Set<Edge> edges = new HashSet<Edge>();
+        Set<String> nodeNames = new HashSet<>();
         try (var lines = Files.lines(path)) {
             lines.forEach(line -> {
                 Edge e = parseLineAsEdge(line);
                 if (e != null) {
                     edges.add(e);
                 }
+                if (!nodeNames.contains(e.from.name))
+                    nodeNames.add(e.from.name);
+                if (!nodeNames.contains(e.to.name))
+                    nodeNames.add(e.to.name);
             });
         } catch (IOException e) {
             System.out.printf("Could not bind the path %s to lines\n", filepath);
             throw new Error("Could not parse file.");
         };
-        return new Graph(edges);
+        return new Graph(edges, nodeNames);
     }
 }

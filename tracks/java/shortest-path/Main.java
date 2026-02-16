@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 import graph.Graph;
-import graph.ShortestPathFinder;
+import algo.ShortestPathFinder;
 import io.InputFileParser;
 
 public class Main {
