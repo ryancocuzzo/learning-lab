@@ -1,0 +1,5 @@
+➜  cd tracks/ts/knn
+➜  knn git:(main) ✗ yarn start
+yarn run v1.22.22
+$ tsx watch ./src/index.ts
+Classified 97.30% of 37 test samples correctly
