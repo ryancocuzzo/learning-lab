@@ -1,3 +1,9 @@
 {
-    "python.defaultInterpreterPath": "tracks/python/log-etl/.venv/bin/python",
+  "python.defaultInterpreterPath": "tracks/python/log-etl/.venv/bin/python",
+  "eslint.workingDirectories": [
+    {
+      "directory": "tracks/ts/indexer",
+      "changeProcessCWD": true
+    }
+  ]
 }

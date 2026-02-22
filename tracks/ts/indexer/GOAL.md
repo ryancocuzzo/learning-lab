@@ -6,18 +6,18 @@ The goal here is to build a Mini Search Engine Indexer that indexes all .txt fil
 
 A TypeScript program that..
 
-- [ ] Traverses a directory to find all .txt files
-- [ ] Indexes files
-    - [ ] Tokenizes text content
-    - [ ] Normalizes tokens (lowercase, remove punctuation, etc.)
-    - [ ] Builds inverted index (Map<string, Set<docId>>)
-- [ ] Implements concurrency
-    - [ ] Indexes files in parallel
-    - [ ] Merges inverted indexes from parallel operations
-- [ ] Provides search functionality
-    - [ ] Accepts search terms
-    - [ ] Returns matching document IDs
-- [ ] Uses TypeScript modularity and clean-code conventions
+- [X] Traverses a directory to find all .txt files
+- [X] Indexes files
+    - [X] Tokenizes text content
+    - [X] Normalizes tokens (lowercase, remove punctuation, etc.)
+    - [X] Builds inverted index (Map<string, Set<docId>>)
+- [X] Implements concurrency
+    - [X] Indexes files in parallel
+    - [X] Merges inverted indexes from parallel operations
+- [X] Provides search functionality
+    - [X] Accepts search terms
+    - [X] Returns matching file names
+- [X] Uses TypeScript modularity and clean-code conventions
 
 ### Skills practiced
 
@@ -28,3 +28,5 @@ A TypeScript program that..
 - Concurrency (parallel file indexing, index merging)
 
 ## Artifacts produced
+
+- artifacts/session.txt

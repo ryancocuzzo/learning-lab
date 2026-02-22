@@ -1,0 +1,24 @@
+{
+  "name": "indexer",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node src/main.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
+    "jiti": "^2.6.1",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "@tsconfig/node24": "^24.0.4",
+    "typescript": "^5.9.3"
+  }
+}

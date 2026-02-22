@@ -1,0 +1,47 @@
+% yarn start
+yarn run v1.22.22
+$ ts-node src/main.ts
+Enter the directory: searchable_files
+Found:
+ [
+  'searchable_files/dachshund.txt\n',
+  'searchable_files/french-bulldog.txt\n',
+  'searchable_files/german-shephard.txt\n',
+  'searchable_files/golden-retriever.txt\n',
+  'searchable_files/siberian-husky.txt\n'
+]
+Indexed searchable_files/dachshund.txt as 0_1771725188697
+Merged 44 tokens into the inverted index
+Indexed searchable_files/french-bulldog.txt as 1_1771725188697
+Merged 42 tokens into the inverted index
+Indexed searchable_files/german-shephard.txt as 2_1771725188697
+Merged 43 tokens into the inverted index
+Indexed searchable_files/golden-retriever.txt as 3_1771725188697
+Merged 47 tokens into the inverted index
+Indexed searchable_files/siberian-husky.txt as 4_1771725188697
+Merged 46 tokens into the inverted index
+
+======= Query engine =======
+We're about to query the index we built Type EXIT + Enter to exit the program.
+Enter your query string (): french golden
+Results:
+searchable_files/french-bulldog.txt
+searchable_files/golden-retriever.txt
+Enter your query string: siberian
+Results:
+searchable_files/siberian-husky.txt
+Enter your query string: dog puppy
+Results:
+searchable_files/french-bulldog.txt
+searchable_files/german-shephard.txt
+searchable_files/golden-retriever.txt
+searchable_files/siberian-husky.txt
+Enter your query string: breed
+Results:
+searchable_files/dachshund.txt
+searchable_files/french-bulldog.txt
+searchable_files/german-shephard.txt
+searchable_files/golden-retriever.txt
+searchable_files/siberian-husky.txt
+Enter your query string: EXIT
+✨  Done in 57.02s.
