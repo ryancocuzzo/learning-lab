@@ -1,6 +1,7 @@
 # KNN Implementation for the IRIS Data set
 
 You can find the data set at https://archive.ics.uci.edu/dataset/53/iris.
+The inspiration of this project comes from reading the paper "Artificial Intelligence" by Charles Davi ([link](https://fpwarehouse.wordpress.com/wp-content/uploads/2025/08/the-fundamentals-of-artificial-intelligence.pdf)).
 
 ## Run
 
