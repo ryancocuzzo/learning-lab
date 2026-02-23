@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Order {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  productId String
+  units     Int
+  userId    String
+}
+
+model OutboxMessage {
+  id          String    @id @default(uuid())
+  topic       String
+  payload     Json
+  createdAt   DateTime  @default(now())
+  processedAt DateTime?
+  lockedBy    String?
+  lockedAt    DateTime?
+}

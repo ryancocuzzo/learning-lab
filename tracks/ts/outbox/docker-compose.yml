@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  psql:
+    ports:
+      - 5432:5432
+    image: postgres:18
+    container_name: postgres
+    env_file:
+      - .docker.env
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+  kafka:
+    image: apache/kafka-native:4.2.0
+    env_file:
+      - .docker.env
+    ports:
+      - "${KAFKA_PORT:-9092}:9092"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+
+volumes:
+  postgres_data:
+  kafka_data:
