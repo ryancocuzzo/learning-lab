@@ -1,3 +1,4 @@
 *.class
 *.env
 node_modules
+*.pyc

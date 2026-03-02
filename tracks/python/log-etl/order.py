@@ -1,11 +1,12 @@
-
 from typing import Annotated, List
 
 from pydantic import ConfigDict, Field, BaseModel
 
 
 class OrderItem(BaseModel):
-    item_name: Annotated[str, Field(alias="sku")] # the SKUs in these logs are just plaintext names
+    id: Annotated[
+        str, Field(alias="sku")
+    ]  # the SKUs in these logs are just plaintext names. we'll treat as IDs.
     quantity: Annotated[int, Field(alias="qty")]
     unit_price: float
 
