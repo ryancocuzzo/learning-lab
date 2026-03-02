@@ -7,4 +7,11 @@ requires-python = ">=3.12"
 dependencies = [
     "orjson>=3.11.7",
     "pydantic>=2.12.5",
+    "pyrefly>=0.54.0",
+]
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
 ]
