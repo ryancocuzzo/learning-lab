@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "bun",
+      "request": "launch",
+      "name": "Debug BSON (tracks/ts/bson)",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}/tracks/ts/bson"
+    }
+  ]
+}
