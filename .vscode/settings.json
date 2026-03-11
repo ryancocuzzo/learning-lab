@@ -1,10 +1,11 @@
 {
   "python.defaultInterpreterPath": "tracks/python/log-etl/.venv/bin/python",
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "standard",
   "eslint.workingDirectories": [
     {
       "directory": "tracks/ts/indexer",
       "changeProcessCWD": true
     }
-  ],
-  "python.languageServer": "None"
+  ]
 }
